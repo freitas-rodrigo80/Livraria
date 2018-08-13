@@ -1,0 +1,16 @@
+﻿<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<script>
+        $(".linkRemove").click(function (event) {
+            event.preventDefault();
+            self = $(this);
+            link = self.attr("href");
+            alert("Link é: " + link);
+
+            $.get(link, function (data) {
+                alert("Rodando Callback");
+                self.closest("tr").remove();
+            })
+        }
+        );
+</script>

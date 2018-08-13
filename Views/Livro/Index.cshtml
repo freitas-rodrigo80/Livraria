@@ -1,0 +1,50 @@
+﻿
+<h1 style="text-align:center; padding-bottom: 10px;">Lista de Livros</h1>
+<div id="bntAdiciona">
+    @Html.ActionLink("Incluir Livro", "Novo", null, new { @class = "btn btn-primary" })
+</div>
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Resumo</th>
+            <th>Autor</th>
+            <th>Categoria</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Publicado</th>
+            <th style="width:220px;">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.Resumo</td>
+                <td>@item.Autor</td>
+                <td>@item.Categoria</td>
+                <td>@item.Quantidade</td>
+                <td>@item.Valor</td>
+                <td>
+                    @if (item.Publicado)
+                    {
+                        @Html.Raw(String.Format("{0:dd/MM/yyyy}", item.DataPublicacao))
+                    }
+                    else
+                    {
+                        @Html.Raw("Não")
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Remover", "RemoveLivro", new { id = item.IdLivro })
+                    @Html.ActionLink("Editar", "Visualiza", new { id = item.IdLivro })
+                    @Html.ActionLink("Publicar", "PublicaLivro", new { id = item.IdLivro })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Script{
+    @Html.Partial("_ScriptRemoveLinha")
+    }

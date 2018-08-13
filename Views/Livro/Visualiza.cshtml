@@ -1,0 +1,18 @@
+﻿@model Livraria.Models.Livro
+
+@using (Html.BeginForm("EditaLivro", "Livro"))
+{
+    @Html.HiddenFor(l => l.IdLivro)
+    @Html.HiddenFor(l => l.Publicado)
+    @Html.HiddenFor(l => l.DataPublicacao)
+
+    @Html.EditorFor(l => l)
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+}
+
+
+@section Script{
+    @Html.Partial("_Script")
+}
+

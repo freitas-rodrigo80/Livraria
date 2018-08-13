@@ -1,0 +1,14 @@
+﻿@model Livraria.Models.Livro
+<h1> Novo Livro</h1>
+@using (Html.BeginForm("Adiciona", "Livro"))
+
+{
+    @Html.EditorFor(l => l)
+
+    <button type="submit" class="btn btn-primary" >Cadastar</button>
+}
+
+@section Script{
+    @Html.Partial("_Script")
+}
+

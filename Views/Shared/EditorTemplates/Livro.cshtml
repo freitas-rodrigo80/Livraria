@@ -1,0 +1,19 @@
+﻿@model Livraria.Models.Livro
+
+@Html.LabelFor(l => l.Titulo)
+@Html.TextBoxFor(l => l.Titulo, new { @class = "form-control" })
+
+@Html.LabelFor(l => l.Resumo)
+@Html.TextBoxFor(l => l.Resumo, new { @class = "form-control" })
+
+@Html.LabelFor(l => l.Autor)
+@Html.TextBoxFor(l => l.Autor, new { @class = "form-control" })
+
+@Html.LabelFor(l => l.Categoria)
+@Html.TextBoxFor(l => l.Categoria, new { @class = "form-control", rows = 6 })
+
+@Html.LabelFor(l => l.Quantidade)
+@Html.TextBoxFor(l => l.Quantidade, new { @class = "form-control" })
+
+@Html.LabelFor(l => l.Valor)
+@Html.TextBoxFor(l => l.Valor, new { @class = "form-control" })
